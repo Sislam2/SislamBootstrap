@@ -1,0 +1,12 @@
+- if self.respond_to?(:collection)
+  table.table
+    thead
+      tr
+        - collection.first.attributes.keys.each do |key|
+          td= key
+    tbody
+      tr
+        - collection.each do |resource|
+          tr
+            - resource.attributes.values.each do |value|
+              td= value 

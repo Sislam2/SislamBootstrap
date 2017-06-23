@@ -2,7 +2,7 @@ aside.main-sidebar
   section.sidebar
     .user-panel
       .pull-left.image
-        img.img-circle[src="dist/img/user2-160x160.jpg" alt="User Image"]
+        = image_tag('user', class: :'img-circle', alt: 'User Image')
       .pull-left.info
         p
           = current_user.email
@@ -17,17 +17,12 @@ aside.main-sidebar
             i.fa.fa-search
     ul.sidebar-menu
       li.header
-        | HEADER
+        | Menu
       li.active
-        a[href="#"]
-          i.fa.fa-link
+        = link_to users_path do 
+          i.fa.fa-users
           span
-            | Link
-      li
-        a[href="#"]
-          i.fa.fa-link
-          span
-            | Another Link
+            | User
       li.treeview
         a[href="#"]
           i.fa.fa-link

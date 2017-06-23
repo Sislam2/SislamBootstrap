@@ -37,6 +37,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# use for controller actions
+gem 'inherited_resources'
 # Use for beatefully HTML
 gem "slim"
 # Use fontawsome icons

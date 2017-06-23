@@ -1,0 +1,15 @@
+= form_for resource do |f|
+  - resource.attributes.keys.each do |field|
+    .form-group
+      = f.label field
+      = f.text_field field, class: 'form-control'
+
+  = link_to :back, class: ['btn','btn-default'] do
+    = icon('mail-reply')
+    |  
+    = t('helpers.links.back')
+  |  
+  = f.button :submit, class: ['btn','btn-success'] do
+    = icon('save')
+    |  
+    = t('helpers.titles.save', model: resource_class)
