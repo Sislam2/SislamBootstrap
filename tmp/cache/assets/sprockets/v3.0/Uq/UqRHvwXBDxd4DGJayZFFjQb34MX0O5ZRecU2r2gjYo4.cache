@@ -1,0 +1,11 @@
+I"â(function() {
+  (function() {
+    return $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: Math.floor('20%' / optional)
+    });
+  });
+
+}).call(this);
+:ET

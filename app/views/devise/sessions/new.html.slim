@@ -1,0 +1,17 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field.form-group.has-feedback
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true, class: :'form-control'
+  .field.form-group.has-feedback
+    = f.label :password
+    br
+    = f.password_field :password, autocomplete: "off", class: :'form-control'
+  - if devise_mapping.rememberable?
+    .field.checkbox.icheck.has-feedback
+      label
+        = f.check_box :remember_me
+        |  Remeber Me
+  .actions
+    = f.submit "Log in", class: ['btn','btn-success']
+= render "devise/shared/links"

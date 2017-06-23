@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title Bootstrap
+    = csrf_meta_tags 
+    
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    = stylesheet_link_tag 'adminlte', media: 'all' 
+    = stylesheet_link_tag 'adminlte/skins/skin-blue', media: 'all' 
+    
+  body.hold-transition.skin-blue.sidebar-mini
+    .wrapper
+      = render 'top_bar'
+      = render 'side_bar'
+      .content-wrapper
+        section.content-header
+          h1
+            |  Page Header 
+            small
+              | Optional description
+          ol.breadcrumb
+            li
+              a[href="#"]
+                = icon('dashboard')
+                |  Level
+            li.active
+              | Here
+              
+        .content
+          = yield 
+          
+      = render 'footer'
+      = render 'right_side_bar'  
+  = javascript_include_tag 'jquery3' 
+  = javascript_include_tag 'adminlte' 
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 

@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Bootstrap
+    = csrf_meta_tags 
+    
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    = stylesheet_link_tag 'adminlte', media: 'all' 
+    = stylesheet_link_tag 'adminlte/skins/skin-blue', media: 'all' 
+    
+  body.hold-transition.login-page
+    .login-box
+      .login-logo
+        a href="../../index2.html" 
+          b Admin
+          | LTE
+      .login-box-body
+        p.login-box-msg Sign in to start your session
+        = yield 
+      
+  = javascript_include_tag 'jquery3' 
+  = javascript_include_tag 'adminlte' 
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
