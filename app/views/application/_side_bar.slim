@@ -22,12 +22,12 @@ aside.main-sidebar
         = link_to accounts_path do 
           i.fa.fa-users
           span
-            | Accounts
+            = t('activerecord.models.account')
       li class=menu_active('users')
         = link_to users_path do 
           i.fa.fa-user
           span
-            | Users
+            = t('activerecord.models.user')
       li.treeview
         a[href="#"]
           i.fa.fa-link

@@ -57,6 +57,8 @@ gem 'paperclip'
 gem 'ransack'
 #use for paginate
 gem 'kaminari'
+#use for breadcrumbs
+gem "breadcrumbs_on_rails"
 # use for logical delete
 gem "paranoia"
 # use AWS SDK

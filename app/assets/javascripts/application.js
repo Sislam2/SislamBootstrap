@@ -15,14 +15,14 @@
 //= require turbolinks
 //= require_tree .
 
-var ready = function () {
-  var options = $.AdminLTE.options;
-  try {
-    if (options.sidebarPushMenu) {
-      $.AdminLTE.pushMenu.activate(options.sidebarToggleSelector);
-    }
-    $.AdminLTE.layout.activate();
-  } catch (e) { }
-};
-
-document.addEventListener('turbolinks:load', ready);
+// var ready = function () {
+//   var options = $.AdminLTE.options;
+//   try {
+//     if (options.sidebarPushMenu) {
+//       $.AdminLTE.pushMenu.activate(options.sidebarToggleSelector);
+//     }
+//     $.AdminLTE.layout.activate();
+//   } catch (e) { }
+// };
+//
+// document.addEventListener('turbolinks:load', ready);

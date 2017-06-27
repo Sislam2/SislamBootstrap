@@ -10,6 +10,11 @@
         = icon('search')
         |  
         = t('helpers.titles.search', model: resource_class)
+    .col-md-1
+      = link_to collection_path, class: 'btn btn-default' do
+        = icon(:eraser)
+        |   
+        = t('helpers.links.eraser')
 
 p.pull-right= page_entries_info collection, entry_name: 'item' 
 
@@ -18,13 +23,13 @@ p.pull-right= page_entries_info collection, entry_name: 'item'
     thead
       tr
         - index_columns.each do |key|
-          td= key
+          td= resource_class.human_attribute_name(key)
         td= t('helpers.actions')
     tbody
       - collection.each do |resource|
         tr
           - index_columns.each do |value|
-            td= resource.public_send(value)
+            td= format_value(resource.public_send(value))
           td
             = link_to edit_resource_url(resource), class: 'btn btn-warning', title: t('helpers.links.edit') do
               = icon(:pencil)

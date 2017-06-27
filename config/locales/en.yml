@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   helpers:
     actions: "Actions"
     links:
@@ -40,6 +39,7 @@ en:
       destroy: "Delete"
       new: "New"
       edit: "Edit"
+      eraser: "eraser"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"
@@ -47,7 +47,15 @@ en:
       delete: "Delete %{model}"
       search: "Search"
 
-  active_record:
+  activerecord:
     models:
-      accounts: Accounts
-      users: Users
+      account: Accounts
+      user: Users
+
+  views:
+    users:
+      index: Index
+      new: New
+      edit: Edit
+      update: Update
+      show: Show

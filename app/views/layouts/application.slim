@@ -19,13 +19,7 @@ html
             small
               | Optional description
           ol.breadcrumb
-            li
-              a[href="#"]
-                = icon('dashboard')
-                |  Level
-            li.active
-              | Here
-
+            = render_breadcrumbs :tag => :li, :separator => ""
               
         .content
           = yield 
@@ -33,6 +27,6 @@ html
       = render 'footer'
       = render 'right_side_bar'  
       
-  = javascript_include_tag 'jquery3', 'data-turbolinks-track': 'reload' 
+  = javascript_include_tag 'jquery3'
   = javascript_include_tag 'adminlte', 'data-turbolinks-track': 'reload'  
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
