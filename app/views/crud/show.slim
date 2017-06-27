@@ -1,0 +1,11 @@
+- form_params.each do |field|
+  p
+    = label_tag field
+    | : 
+    = resource.public_send(field)
+  
+= link_to collection_path, class: 'btn btn-default' do 
+  = icon('mail-reply')
+  |  
+  = t("helpers.links.back")
+  

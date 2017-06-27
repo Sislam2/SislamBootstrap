@@ -1,12 +1,40 @@
+= search_form_for @q do |f|
+  .row
+    - search_columns.each do |search_column|
+      .col-md-4.form-group
+        = f.label search_column
+        = f.search_field search_column, class: 'form-control'
+  .row
+    .col-md-2
+      = f.button :submit, class: ['btn','btn-success', 'btn-block'] do
+        = icon('search')
+        |  
+        = t('helpers.titles.search', model: resource_class)
+
+p.pull-right= page_entries_info collection, entry_name: 'item' 
+
 - if self.respond_to?(:collection)
   table.table
     thead
       tr
-        - collection.first.attributes.keys.each do |key|
+        - index_columns.each do |key|
           td= key
+        td= t('helpers.actions')
     tbody
-      tr
-        - collection.each do |resource|
-          tr
-            - resource.attributes.values.each do |value|
-              td= value 
+      - collection.each do |resource|
+        tr
+          - index_columns.each do |value|
+            td= resource.public_send(value)
+          td
+            = link_to edit_resource_url(resource), class: 'btn btn-warning', title: t('helpers.links.edit') do
+              = icon(:pencil)
+            |  
+            = link_to resource_url(resource), class: 'btn btn-danger', title: t('helpers.links.destroy'), method: :delete do
+              = icon('trash-o')
+              
+= paginate collection, remote: true              
+              
+= link_to new_resource_url, class: 'btn btn-success' do
+  = icon(:plus)
+  |  
+  = t('helpers.links.new')

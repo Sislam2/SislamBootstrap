@@ -15,7 +15,7 @@ html
       .content-wrapper
         section.content-header
           h1
-            |  Page Header
+            = page_title
             small
               | Optional description
           ol.breadcrumb
@@ -32,6 +32,7 @@ html
           
       = render 'footer'
       = render 'right_side_bar'  
-  = javascript_include_tag 'jquery3' 
-  = javascript_include_tag 'adminlte' 
+      
+  = javascript_include_tag 'jquery3', 'data-turbolinks-track': 'reload' 
+  = javascript_include_tag 'adminlte', 'data-turbolinks-track': 'reload'  
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 

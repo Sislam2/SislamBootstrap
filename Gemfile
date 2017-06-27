@@ -55,6 +55,8 @@ gem 'toastr_rails'
 gem 'paperclip'
 # use for search
 gem 'ransack'
+#use for paginate
+gem 'kaminari'
 # use for logical delete
 gem "paranoia"
 # use AWS SDK

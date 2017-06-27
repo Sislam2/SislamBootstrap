@@ -45,3 +45,9 @@ en:
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
+      search: "Search"
+
+  active_record:
+    models:
+      accounts: Accounts
+      users: Users

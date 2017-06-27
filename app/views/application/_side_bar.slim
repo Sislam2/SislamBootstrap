@@ -18,11 +18,16 @@ aside.main-sidebar
     ul.sidebar-menu
       li.header
         | Menu
-      li.active
-        = link_to users_path do 
+      li class=menu_active('accounts')
+        = link_to accounts_path do 
           i.fa.fa-users
           span
-            | User
+            | Accounts
+      li class=menu_active('users')
+        = link_to users_path do 
+          i.fa.fa-user
+          span
+            | Users
       li.treeview
         a[href="#"]
           i.fa.fa-link
