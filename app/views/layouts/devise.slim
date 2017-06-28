@@ -9,6 +9,8 @@ html
     = stylesheet_link_tag 'adminlte/skins/skin-blue', media: 'all' 
     
   body.hold-transition.login-page
+    #flash_message.hidden data-turbolinks-track = 'reload'
+      = flash.to_json
     .login-box
       .login-logo
         a href="../../index2.html" 

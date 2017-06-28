@@ -10,19 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery_ujs
 //= require bootstrap-sprockets
 //= require 'jquery-icheck'
-//= require turbolinks
 //= require_tree .
-
-// var ready = function () {
-//   var options = $.AdminLTE.options;
-//   try {
-//     if (options.sidebarPushMenu) {
-//       $.AdminLTE.pushMenu.activate(options.sidebarToggleSelector);
-//     }
-//     $.AdminLTE.layout.activate();
-//   } catch (e) { }
-// };
-//
-// document.addEventListener('turbolinks:load', ready);
+//= require turbolinks

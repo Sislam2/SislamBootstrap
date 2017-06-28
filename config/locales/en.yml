@@ -51,6 +51,7 @@ en:
     models:
       account: Accounts
       user: Users
+      home: Home
 
   views:
     users:

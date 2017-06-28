@@ -28,6 +28,7 @@ pt-BR:
     models:
       account: Contas
       user: Usuários
+      home: Inicial
     attributes:
       user:
         email: Email

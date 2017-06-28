@@ -108,8 +108,7 @@ header.main-header
                 a.btn.btn-default.btn-flat[href="#"]
                   | Profile
               .pull-right
-                a.btn.btn-default.btn-flat[href="#"]
-                  | Sign out
+                = link_to('Sign out'.html_safe, destroy_user_session_path, method: 'delete', class: 'btn btn-default btn-flat')
         li
           a[href="#" data-toggle="control-sidebar"]
             i.fa.fa-gears

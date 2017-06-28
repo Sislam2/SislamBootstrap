@@ -23,7 +23,7 @@ p.pull-right= page_entries_info collection, entry_name: 'item'
     thead
       tr
         - index_columns.each do |key|
-          td= resource_class.human_attribute_name(key)
+          td= sort_link(@q, key, resource_class.human_attribute_name(key))
         td= t('helpers.actions')
     tbody
       - collection.each do |resource|
@@ -37,7 +37,7 @@ p.pull-right= page_entries_info collection, entry_name: 'item'
             = link_to resource_url(resource), class: 'btn btn-danger', title: t('helpers.links.destroy'), method: :delete do
               = icon('trash-o')
               
-= paginate collection, remote: true              
+= paginate collection
               
 = link_to new_resource_url, class: 'btn btn-success' do
   = icon(:plus)
