@@ -19,12 +19,12 @@ aside.main-sidebar
       li.header
         | Menu
       li class=menu_active('accounts')
-        = link_to accounts_path do 
+        = link_to accounts_path, 'data-turbolinks-action' => "replace" do 
           i.fa.fa-users
           span
             = t('activerecord.models.account')
       li class=menu_active('users')
-        = link_to users_path do 
+        = link_to users_path, 'data-turbolinks-action' => "replace" do 
           i.fa.fa-user
           span
             = t('activerecord.models.user')

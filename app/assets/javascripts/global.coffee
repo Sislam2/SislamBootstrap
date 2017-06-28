@@ -12,4 +12,3 @@ jQuery ->
 
 $(document).on 'turbolinks:load', ->
   $('.dropdown-toggle').dropdown()
-  # $.AdminLTE.activate()

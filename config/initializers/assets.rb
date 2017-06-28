@@ -11,4 +11,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( jquery3.js adminlte.js adminlte.css adminlte/skins/skin-blue.css  admin_lte/admin_lte_font.css)
+Rails.application.config.assets.precompile += %w( jquery3.js adminlte_bootstrap.js adminlte.css adminlte/skins/skin-blue.css  admin_lte/admin_lte_font.css)

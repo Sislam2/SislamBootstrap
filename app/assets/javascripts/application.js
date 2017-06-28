@@ -13,5 +13,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require 'jquery-icheck'
+//= require toastr_rails
 //= require_tree .
+//= stub adminlte_bootstrap
 //= require turbolinks
