@@ -14,6 +14,7 @@
 //= require bootstrap-sprockets
 //= require 'jquery-icheck'
 //= require toastr_rails
+//= require nested_form_fields
 //= require_tree .
 //= stub adminlte_bootstrap
 //= require turbolinks

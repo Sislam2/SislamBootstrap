@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
       t(controller_name.singularize, scope: 'activerecord.models')
     end
 
+    def current_account
+      @current_account ||= Account.first
+    end
+
 end

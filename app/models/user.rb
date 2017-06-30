@@ -40,4 +40,6 @@ class User < ApplicationRecord
 
   has_many :accounts, as: :resource, through: :roles,
     source: :resource, source_type: 'Account'
+
+  attr_accessor :role_name
 end

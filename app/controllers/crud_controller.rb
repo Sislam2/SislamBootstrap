@@ -21,17 +21,21 @@ class CrudController < ApplicationController
     end
 
   protected
-   def collection
-     get_collection_ivar || set_collection_ivar(search_ransack.page(params[:page]))
-   end
+    def collection
+      get_collection_ivar || set_collection_ivar(search_ransack.page(params[:page]))
+    end
 
-   def search_ransack
-    @q = end_of_association_chain.ransack(params[:q])
-    @q.result
-   end
+    def search_ransack
+      @q = end_of_association_chain.ransack(params[:q])
+      @q.result
+    end
 
-   def t_action_name
-     t("views.#{controller_name}.#{action_name}", default: action_name.camelize)
-   end
+    def t_action_name
+      t("views.#{controller_name}.#{action_name}", default: action_name.camelize)
+    end
+
+    def begin_of_association_chain
+      current_account
+    end
 
 end

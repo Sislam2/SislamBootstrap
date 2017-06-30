@@ -1,4 +1,5 @@
 - form_params.each do |field|
+  - next if field.is_a? Hash
   p
     = label_tag field
     | : 

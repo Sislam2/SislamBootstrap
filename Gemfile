@@ -56,9 +56,11 @@ gem 'toastr_rails'
 gem 'paperclip'
 # use for search
 gem 'ransack'
-#use for paginate
+# use for paginate
 gem 'kaminari'
-#use for breadcrumbs
+# use for dynamic nested forms
+gem 'nested_form_fields'
+# use for breadcrumbs
 gem "breadcrumbs_on_rails"
 # use for logical delete
 gem "paranoia"
