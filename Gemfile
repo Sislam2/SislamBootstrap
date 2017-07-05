@@ -58,6 +58,8 @@ gem 'paperclip'
 gem 'ransack'
 # use for paginate
 gem 'kaminari'
+# use for custom forms DSL
+gem 'simple_form'
 # use for dynamic nested forms
 gem 'nested_form_fields'
 # use for breadcrumbs

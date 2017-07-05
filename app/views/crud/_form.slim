@@ -1,26 +1,9 @@
-= form_for resource do |f|
-  - form_params.each do |field|
-    - if field.is_a? Hash
-      - nested_attribute = field.keys.first.to_s.gsub('_attributes','')
-      = f.nested_fields_for nested_attribute do |ff|
-        = ff.remove_nested_fields_link
-        - field.values.first.each do |ff_field|
-          .form-group
-            = ff.label ff_field
-            = ff.text_field ff_field, class: 'form-control'
-          
-      = f.add_nested_fields_link nested_attribute
-    - else
-      .form-group
-        = f.label field
-        = f.text_field field, class: 'form-control'
+= simple_form_for(resource) do |f|
+  = f.error_notification
 
-  = link_to :back, class: ['btn','btn-default'] do
-    = icon('mail-reply')
-    |  
-    = t('helpers.links.back')
-  |  
-  = f.button :submit, class: ['btn','btn-success'] do
-    = icon('save')
-    |  
-    = t('helpers.titles.save', model: resource_class)
+  .row.form-inputs
+    - form_params.each do |field|
+      = set_field(field, f)
+      
+  .row.col-md-12
+    = f.button :submit_cancel, 'Save', :cancel=> :back

@@ -7,7 +7,7 @@ class AccountsController < CrudController
     def account_params
       params.require(:account).permit(*FORM_PARAMS)
     end
-    
+
     # Remove a ligação direta com a conta
     def begin_of_association_chain; end
 end
