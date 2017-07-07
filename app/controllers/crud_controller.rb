@@ -7,7 +7,27 @@ class CrudController < ApplicationController
   add_breadcrumb ->(a){  a.page_title }, :collection_path
   add_breadcrumb :t_action_name
 
+  def create
+    create!{ redirect_to_button }
+  end
+
+  def update
+    update!{ redirect_to_button }
+  end
+
   private
+    def redirect_to_button
+      return if resource.new_record?
+      case params[:button]
+      when "save_and_keep" then
+        edit_resource_path(resource)
+      when "save_and_new" then
+        new_resource_path
+      else
+        collection_path
+      end
+    end
+
     def form_params
       self.class::FORM_PARAMS
     end

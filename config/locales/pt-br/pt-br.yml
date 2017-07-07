@@ -12,10 +12,13 @@ pt-BR:
     titles:
       edit: "Editar %{model}"
       save: "Salvar %{model}"
+      save_and_keep: "Salvar e Ficar"
+      save_and_new: "Salvar e Criar"
       new: "Novo %{model}"
       delete: "Excluir %{model}"
       search: "Pesquisar"
     page_entries_info:
+      nobody: "Você não tem nenhum(a) %{model}"
       one_page:
         display_entries:
           zero: "Nenhum %{entry_name} encontrado"
@@ -29,6 +32,7 @@ pt-BR:
       account: Contas
       user: Usuários
       home: Inicial
+      person: Pessoas
     attributes:
       user:
         email: Email
@@ -36,6 +40,15 @@ pt-BR:
         created_at: Criado em
       account:
         name: Nome
+      person:
+        name: Nome
+        email: Email
+        phone: Telefone
+        mobile_phone: Celular
+        address: Endereço
+        cep: CEP
+        city_id: Cidade
+        cpf_cnpj: CPF/CNPJ
 
   views:
     pagination:

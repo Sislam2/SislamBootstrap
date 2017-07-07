@@ -16,9 +16,9 @@
         |   
         = t('helpers.links.eraser')
 
-p.pull-right= page_entries_info collection, entry_name: 'item' 
-
-- if self.respond_to?(:collection)
+- if self.respond_to?(:collection) && collection.length.nonzero?
+  p.pull-right= page_entries_info collection, entry_name: 'item' 
+  
   table.table
     thead
       tr
@@ -37,7 +37,11 @@ p.pull-right= page_entries_info collection, entry_name: 'item'
             = link_to resource_url(resource), class: 'btn btn-danger', title: t('helpers.links.destroy'), method: :delete do
               = icon('trash-o')
               
-= paginate collection
+  = paginate collection
+- else
+  br
+  .callout.callout-info.lead
+    h4= t('helpers.page_entries_info.nobody', model: resource_class.model_name.human)
               
 = link_to new_resource_url, class: 'btn btn-success' do
   = icon(:plus)

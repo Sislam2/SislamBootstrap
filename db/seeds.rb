@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+if City.count == 0
+  connection = ActiveRecord::Base.connection
+  
+  ActiveRecord::Base.transaction do
+     connection.execute(File.read('db/brazilian_cities.sql'))
+  end
+end

@@ -1,0 +1,41 @@
+pt-BR:
+  activerecord:
+    errors:
+      format: ! '%{attribute} %{message}'
+      messages:
+        accept_the_terms: Você deve aceitar os termos.
+        password_confirmation: Você deve deixar este campo igual a senha.
+        already_registered_in_another_engine: "O usuário para \"%{value}\" já foi registrado em outro aplicativo, utilize os mesmos dados do cadastro para fazer login."
+        already_registered: "O usuário para \"%{value}\" já foi registrado, utilize os dados do cadastro para fazer login."
+        too_short: Deve ter no máximo #{count}.
+        accepted: Deve ser aceito!
+        blank: Não pode ficar em branco.
+        present: Não pode ficar em branco.
+        required: Não pode ficar em branco.
+        confirmation: Você deve deixar este campo igual a %{attribute}.
+        empty: Não pode ficar em branco.
+        equal_to: Você deve deixar este campo igual a %{count}.
+        even: Você deve deixar este campo com valor par.
+        exclusion: Não está disponível.
+        greater_than: Você deve deixar o campo com valor maior que %{count}.
+        greater_than_or_equal_to: Você deve deixar o campo com valor maior ou igual a %{count}.
+        inclusion: Não está incluído na lista.
+        invalid: Campo não é válido.
+        invalid_url: Url inválida.
+        less_than: Você deve deixar o campo com valor menor que %{count}.
+        less_than_or_equal_to: Você deve deixar o campo com valor menor ou igual a %{count}.
+        not_a_number: Você deve deixar o campo com valor númerico.
+        not_an_integer: Você deve deixar o campo com valor númerico inteiro.
+        odd: Você deve deixar este campo com valor ímpar.
+        record_invalid: ! 'A validação falhou: %{errors}.'
+        restrict_dependent_destroy:
+          one: "Não é possível excluir o registro pois existe um %{record} dependente."
+          many: "Não é possível excluir o registro pois existem %{record} dependentes."
+        taken: já está em uso.
+        too_long: ! 'Deve ter no máximo: %{count} caracteres.'
+        emmail_invalid: "Email não é válido"
+      template:
+        body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
+        header:
+          one: ! 'Não foi possível gravar %{model}: 1 erro.'
+          other: ! 'Não foi possível gravar %{model}: %{count} erros.'

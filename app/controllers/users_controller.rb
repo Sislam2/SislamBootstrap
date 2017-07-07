@@ -4,7 +4,7 @@ class UsersController < CrudController
   def create
     create! do
       @user.add_role(user_params[:role_name], current_account) if @user.errors.blank?
-      @user
+      redirect_to_button
     end
   end
 
@@ -14,7 +14,7 @@ class UsersController < CrudController
       @user.roles.where(resource: current_account).destroy_all
       @user.add_role(user_params[:role_name], current_account)
     end
-    update!
+    update!{ redirect_to_button }
   end
 
   private

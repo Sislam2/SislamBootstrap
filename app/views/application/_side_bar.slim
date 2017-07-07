@@ -28,6 +28,11 @@ aside.main-sidebar
           i.fa.fa-user
           span
             = t('activerecord.models.user')
+      li class=menu_active('people')
+        = link_to people_path, 'data-turbolinks-action' => "replace" do 
+          i.fa.fa-users
+          span
+            = t('activerecord.models.people')
       li.treeview
         a[href="#"]
           i.fa.fa-link
