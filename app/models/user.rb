@@ -22,13 +22,19 @@
 #  locked_at              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  person_id              :integer
 #
 # Indexes
 #
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
+#  index_users_on_person_id             (person_id)
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
+#
+# Foreign Keys
+#
+#  fk_rails_...  (person_id => people.id)
 #
 
 class User < ApplicationRecord
@@ -40,6 +46,8 @@ class User < ApplicationRecord
 
   has_many :accounts, as: :resource, through: :roles,
     source: :resource, source_type: 'Account'
+
+  belongs_to :person, required: false
 
   attr_accessor :role_name
 end

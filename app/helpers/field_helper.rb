@@ -21,7 +21,7 @@ module FieldHelper
     end
 
     # Verifica se a coluna existe na tabela e se é um relacionamento
-    # se for um relacionamento chama f.association.
+    # se for um relacionamento chama select2
     def field_column_type(f, field)
       if field.to_s.end_with?('_id') && resource_class.reflections[field.to_s.gsub('_id','')].present?
         path_json = public_send('api_v1_'+field.to_s.gsub('_id','').pluralize+'_path')

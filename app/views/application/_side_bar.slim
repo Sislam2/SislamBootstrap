@@ -18,21 +18,10 @@ aside.main-sidebar
     ul.sidebar-menu
       li.header
         | Menu
-      li class=menu_active('accounts')
-        = link_to accounts_path, 'data-turbolinks-action' => "replace" do 
-          i.fa.fa-users
-          span
-            = t('activerecord.models.account').pluralize
-      li class=menu_active('users')
-        = link_to users_path, 'data-turbolinks-action' => "replace" do 
-          i.fa.fa-user
-          span
-            = t('activerecord.models.user').pluralize
-      li class=menu_active('people')
-        = link_to people_path, 'data-turbolinks-action' => "replace" do 
-          i.fa.fa-users
-          span
-            = t('activerecord.models.person').pluralize
+      = menu_link('accounts','users')
+      = menu_link('users','user')
+      = menu_link('people','address-book')
+      
       li.treeview
         a[href="#"]
           i.fa.fa-link
