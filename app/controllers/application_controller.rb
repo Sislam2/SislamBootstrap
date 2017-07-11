@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def page_title
-      t(controller_name.singularize, scope: 'activerecord.models')
+      t(controller_name.singularize, scope: 'activerecord.models').pluralize
     end
 
     def current_account

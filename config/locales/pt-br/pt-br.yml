@@ -1,6 +1,10 @@
 pt-BR:
   helpers:
     actions: "Ações"
+    controller_actions:
+      index: Listagem
+      new: Novo
+      edit: Editar
     links:
       back: "Voltar"
       cancel: "Cancelar"
@@ -29,10 +33,11 @@ pt-BR:
 
   activerecord:
     models:
-      account: Contas
-      user: Usuários
+      account: Conta
+      user: Usuário
       home: Inicial
-      person: Pessoas
+      person: Pessoa
+      city: Cidade
     attributes:
       user:
         email: Email
@@ -49,7 +54,7 @@ pt-BR:
         cep: CEP
         city_id: Cidade
         cpf_cnpj: CPF/CNPJ
-
+      
   views:
     pagination:
       first: "&laquo; Primeira"

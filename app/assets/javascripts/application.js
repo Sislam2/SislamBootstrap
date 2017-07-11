@@ -13,8 +13,10 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require 'jquery-icheck'
+//= require 'jquery.mask'
 //= require toastr_rails
 //= require nested_form_fields
+//= require select2-full
 //= require_tree .
 //= stub adminlte_bootstrap
 //= require turbolinks

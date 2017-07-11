@@ -23,9 +23,10 @@ module FieldHelper
     # Verifica se a coluna existe na tabela e se é um relacionamento
     # se for um relacionamento chama f.association.
     def field_column_type(f, field)
-      attribute = resource_class.columns_types[field.to_s]
-
-      return f.association attribute, wrapper_html: default_wrapper_class if !attribute.blank? && attribute.collation
+      if field.to_s.end_with?('_id') && resource_class.reflections[field.to_s.gsub('_id','')].present?
+        path_json = public_send('api_v1_'+field.to_s.gsub('_id','').pluralize+'_path')
+        return f.input field, as: :select2, input_html_options: {'data-url' => path_json }, wrapper_html: default_wrapper_class
+      end
       f.input field, class: 'form-control', wrapper_html: default_wrapper_class
     end
 end

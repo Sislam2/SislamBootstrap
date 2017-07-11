@@ -51,7 +51,7 @@ class CrudController < ApplicationController
     end
 
     def t_action_name
-      t("views.#{controller_name}.#{action_name}", default: action_name.camelize)
+      t("views.#{controller_name}.#{action_name}", default: t("helpers.controller_actions.#{action_name}", default: action_name.camelize))
     end
 
     def begin_of_association_chain

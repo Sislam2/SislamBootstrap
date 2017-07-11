@@ -76,6 +76,11 @@ gem "lograge"
 # Use for application errors
 gem 'rollbar'
 
+# Use for mask on input fields -> Jquery Mask https://igorescobar.github.io/jQuery-Mask-Plugin/
+gem 'jquery_mask_rails'
+# Use for Select2
+gem "select2-rails", '~> 4.0.3'
+
 # Use Admin-Lte
 source 'https://rails-assets.org' do
   gem 'rails-assets-adminlte'

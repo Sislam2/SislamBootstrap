@@ -9,5 +9,7 @@ class PeopleController < CrudController
     end
 
     # Remove a ligação direta com a conta
-    def begin_of_association_chain; end
+    def begin_of_association_chain
+      current_account
+    end
 end
