@@ -1,8 +1,9 @@
 //= require adminlte
 
-turbolinks_init_adminlte = true
+ajust_turbolinks = ->
+  try
+    $.AdminLTE.layout.fix()
+    $.AdminLTE.controlSidebar.activate()
+  catch error
 
-$(document).on 'turbolinks:load', ->
-  if $.AdminLTE.pushMenu && turbolinks_init_adminlte
-    turbolinks_init_adminlte = false
-    $.AdminLTE.pushMenu.activate("[data-toggle='offcanvas']")
+document.addEventListener 'turbolinks:load', ajust_turbolinks

@@ -1,7 +1,6 @@
 doctype html
 html
   head
-    meta name="turbolinks-cache-control" content="no-cache"
     title Bootstrap
     = csrf_meta_tags 
     
@@ -9,7 +8,11 @@ html
     = stylesheet_link_tag 'adminlte', media: 'all' 
     = stylesheet_link_tag 'adminlte/skins/skin-blue', media: 'all' 
     
-  body.hold-transition.skin-blue.sidebar-mini
+    = javascript_include_tag 'jquery3'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
+    = javascript_include_tag 'adminlte_bootstrap'
+
+  body.hold-transition.skin-blue.sidebar-collapse.sidebar-mini
     #flash_message.hidden data-turbolinks-track = 'reload'
       = flash.to_json
     .wrapper
@@ -29,7 +32,3 @@ html
           
       = render 'footer'
       = render 'right_side_bar'  
-      
-  = javascript_include_tag 'jquery3', 'data-turbolinks-track': 'reload' 
-  = javascript_include_tag 'adminlte_bootstrap', 'data-turbolinks-track': 'reload' 
-  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
