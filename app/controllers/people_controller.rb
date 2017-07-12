@@ -8,7 +8,6 @@ class PeopleController < CrudController
       params.require(:person).permit(*FORM_PARAMS)
     end
 
-    # Remove a ligação direta com a conta
     def begin_of_association_chain
       current_account
     end

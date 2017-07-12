@@ -50,7 +50,6 @@ Exemplo:
         params.require(:person).permit(*FORM_PARAMS)
       end
 
-      # Remove a ligação direta com a conta
       def begin_of_association_chain # use this if do you like associate this object with accout, note you need have the has_many people on Account model
         current_account
       end
