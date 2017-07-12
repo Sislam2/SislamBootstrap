@@ -33,6 +33,23 @@ ActiveRecord::Schema.define(version: 20170711124241) do
     t.index ["state"], name: "index_cities_on_state"
   end
 
+  create_table "notifications", id: :serial, force: :cascade do |t|
+    t.integer "actor_id"
+    t.integer "status"
+    t.string "action"
+    t.text "message"
+    t.datetime "read_at"
+    t.integer "recipient_id"
+    t.string "notifiable_type"
+    t.integer "notifiable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_notifications_on_actor_id"
+    t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id"
+    t.index ["recipient_id"], name: "index_notifications_on_recipient_id"
+    t.index ["status"], name: "index_notifications_on_status"
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "email"

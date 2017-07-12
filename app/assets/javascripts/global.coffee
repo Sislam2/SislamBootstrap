@@ -2,6 +2,10 @@ jQuery ->
   flash_message = $("#flash_message").text()
   if (flash_message.length > 0)
     showToast(JSON.parse(flash_message));
+  $("[data-behavior='notifications-mark_all_read']").bind('click',(e)->
+    e.preventDefault()
+    App.notifications.mark_all_read()
+  )
 
 jQuery ->
   $("[type='email']").mask("A", {placeholder: 'xyz@xyz.com.br', translation: {"A": { pattern: /[\w\-.+@]/, recursive: true }} });
