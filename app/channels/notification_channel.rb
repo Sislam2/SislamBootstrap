@@ -6,10 +6,12 @@ class NotificationChannel < ApplicationCable::Channel
 
   def mark_all_read
     Notification.where(recipient_id: uuid).update_all(read_at: Time.current)
-    Notification.speak uuid
   end
 
-  def unsubscribed
-    stop_all_streams
+  def mark_read
+    Notification.find(params[:notification_id]).update(read_at: Time.current)
   end
+
+  # def unsubscribed
+  # end
 end
