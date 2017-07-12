@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711124241) do
+ActiveRecord::Schema.define(version: 20170712182457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 20170711124241) do
     t.datetime "updated_at", null: false
     t.bigint "person_id"
     t.index ["person_id"], name: "index_accounts_on_person_id"
+  end
+
+  create_table "attachments", force: :cascade do |t|
+    t.string "fileable_type"
+    t.bigint "fileable_id"
+    t.string "archive_file_name"
+    t.string "archive_content_type"
+    t.integer "archive_file_size"
+    t.datetime "archive_updated_at"
+    t.string "archive_fingerprint"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fileable_type", "fileable_id"], name: "index_attachments_on_fileable_type_and_fileable_id"
+    t.index ["type"], name: "index_attachments_on_type"
   end
 
   create_table "cities", force: :cascade do |t|

@@ -58,4 +58,23 @@ class CrudController < ApplicationController
       current_account
     end
 
+    def form_permit_params
+      self.class::FORM_PARAMS.map{|a| map_permit_param(a) }
+    end
+
+    def map_permit_param(attributte)
+      if attributte.is_a?(Hash)
+        key = attributte.keys.first
+        key.to_s.end_with?('attributes') ? map_attributes_params(attributte) : key
+      elsif attributte.is_a?(Array)
+        attributte.collect{|a| map_permit_param(a) }
+      else
+        attributte
+      end
+    end
+
+    def map_attributes_params(attributte)
+      { attributte.keys.first => attributte.values.map{|a| map_permit_param(a) }.flatten }
+    end
+
 end

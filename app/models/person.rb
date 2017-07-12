@@ -31,4 +31,7 @@
 class Person < ApplicationRecord
   belongs_to :city, required: false
   belongs_to :account, required: false
+
+  has_one :avatar, class_name: 'Attachments::Image', as: :fileable, dependent: :destroy
+  accepts_nested_attributes_for :avatar
 end
