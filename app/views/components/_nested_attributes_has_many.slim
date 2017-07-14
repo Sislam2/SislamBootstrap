@@ -1,0 +1,8 @@
+= form_nested.nested_fields_for nested_field.name do |ff|
+  - nested_field.attributes.each do |field_attribute|
+    .col.col-md-4
+      = set_field(field_attribute, ff)
+  
+  = ff.remove_nested_fields_link icon('trash-o').html_safe, class: 'btn btn-danger mt-2-7', role: 'button'
+    
+= form_nested.add_nested_fields_link nested_field.name, t('helpers.titles.new', model: nested_field.human), class: 'btn btn-warning'

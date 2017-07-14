@@ -38,6 +38,8 @@
 #
 
 class User < ApplicationRecord
+  include Fields
+  
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -50,4 +52,7 @@ class User < ApplicationRecord
   belongs_to :person, required: false
 
   attr_accessor :role_name
+
+  add_field :email, type: :email
+  add_field :password, :password_confirmation, :role_name
 end

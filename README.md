@@ -43,7 +43,27 @@
   ``` app/views/<name_of_your_controller>/<action_name>.slim  ```
 
   Exemplo:
+    Create new model
+    ```
+    # app/models/person.rb
+    class Person < ApplicationRecord
+      include Fields
+      belongs_to :city, required: false
+      belongs_to :account, required: false
 
+      has_one :avatar, class_name: 'Attachments::Image', as: :fileable, dependent: :destroy
+      accepts_nested_attributes_for :avatar
+
+      validates :name, presence: true
+
+      add_field :email, type: :email
+      add_field :name, :address, :cep, :cpf_cnpj
+      add_field :phone, :mobile_phone, type: :tel
+      add_field :city_id, type: :select2
+
+      add_nested_attributes :avatar
+    end
+    ```
     Create new controller
     ```
     # app/controllers/people_controller.rb
@@ -51,9 +71,6 @@
       private
         INDEX_COLUMNS = [:name, :email, :phone, :mobile_phone]
         SEARCH_COLUMNS = [:email_or_name_or_cpf_cnpj_cont]
-        FORM_PARAMS = [{:email => {type: :email}}, :name, :address, :cep, :cpf_cnpj,
-          {:phone => {type: :tel}}, {:mobile_phone => {type: :tel}}, :city_id,
-          {:avatar_attributes => [archive: {type: :file}]}]
 
         def person_params
           params.require(:person).permit(*form_permit_params)
@@ -74,6 +91,16 @@
         it_behaves_like "SharedCrudController"
       end
     ```
+
+- Model Fields
+  for type and options looks for simple_form documantation: https://github.com/plataformatec/simple_form
+  If do you create your own type looks a folder app/inputs
+
+  add_field  :email, type: :email, options: { input_html: { class: 'special' } } # this method add a input, checkbox, select... on form view
+
+  add_currency_field # this method add a input with currency format on form view
+  add_number_field # this method add a input with number format on form view
+  add_nested_attributes # this method add a inputs for accepts_nested_attributes_for, and use the add_fields seted in the class of association
 
 - Notifications (ActionCable)
 

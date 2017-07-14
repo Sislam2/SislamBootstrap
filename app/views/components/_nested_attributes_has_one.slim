@@ -1,0 +1,5 @@
+= form_nested.simple_fields_for nested_field.name do |nested_form|
+  - nested_field.attributes.each do |field|
+    = set_field(field, nested_form)
+
+    

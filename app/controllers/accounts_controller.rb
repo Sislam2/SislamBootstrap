@@ -2,10 +2,9 @@ class AccountsController < CrudController
   private
     INDEX_COLUMNS = [:name]
     SEARCH_COLUMNS = [:name_cont]
-    FORM_PARAMS = [:name]
 
     def account_params
-      params.require(:account).permit(*FORM_PARAMS)
+      params.require(:account).permit(*form_permit_params)
     end
 
     # Remove a ligação direta com a conta

@@ -29,9 +29,19 @@
 #
 
 class Person < ApplicationRecord
+  include Fields
   belongs_to :city, required: false
   belongs_to :account, required: false
 
   has_one :avatar, class_name: 'Attachments::Image', as: :fileable, dependent: :destroy
   accepts_nested_attributes_for :avatar
+
+  validates :name, presence: true
+
+  add_field :email, type: :email
+  add_field :name, :address, :cep, :cpf_cnpj
+  add_field :phone, :mobile_phone, type: :tel
+  add_field :city_id, type: :select2
+
+  add_nested_attributes :avatar
 end

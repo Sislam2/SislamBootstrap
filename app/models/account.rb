@@ -18,10 +18,14 @@
 #
 
 class Account < ApplicationRecord
+  include Fields
+  
   resourcify
 
   has_many :users, through: :roles
   has_many :people
 
   belongs_to :person, required: false
+
+  add_field :name
 end

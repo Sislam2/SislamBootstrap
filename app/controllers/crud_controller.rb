@@ -29,7 +29,7 @@ class CrudController < ApplicationController
     end
 
     def form_params
-      self.class::FORM_PARAMS
+      self.resource_class.form_fields
     end
 
     def index_columns
@@ -59,7 +59,7 @@ class CrudController < ApplicationController
     end
 
     def form_permit_params
-      self.class::FORM_PARAMS.map{|a| map_permit_param(a) }
+     self.resource_class.accept_fields
     end
 
     def map_permit_param(attributte)
