@@ -21,8 +21,8 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password:
-  host: localhost
+  password: <%= ENV['BOOTSTRAP_DATABASE_PASSWORD'] %>
+  host: <%= ENV['AMZ_RDS_HOST'] || "localhost" %>
 
 development:
   <<: *default
@@ -81,8 +81,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+sandbox:
+  <<: *default
+  database: sislam_bootstrap_sanbox
+
 production:
   <<: *default
   database: sislam_bootstrap_production
-  username: sislam_bootstrap
-  password: <%= ENV['BOOTSTRAP_DATABASE_PASSWORD'] %>
