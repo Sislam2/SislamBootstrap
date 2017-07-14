@@ -1,4 +1,11 @@
 //= require adminlte
+//= require 'jquery-icheck'
+
+jQuery ->
+  $('input[type=checkbox]').iCheck({
+    checkboxClass: 'icheckbox_square-blue',
+    radioClass: 'iradio_square-blue'
+  })
 
 ajust_turbolinks = ->
   try

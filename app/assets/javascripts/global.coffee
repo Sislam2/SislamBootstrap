@@ -6,7 +6,7 @@ jQuery ->
     e.preventDefault()
     App.notifications.mark_all_read()
   )
-
+  
 jQuery ->
   $("[type='email']").mask("A", {placeholder: 'xyz@xyz.com.br', translation: {"A": { pattern: /[\w\-.+@]/, recursive: true }} });
   $("[type='tel']").mask('(00) 0000-00009', {placeholder: '(00) 0000-00000'});

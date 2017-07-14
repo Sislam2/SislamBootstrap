@@ -24,13 +24,13 @@
       tr
         - index_columns.each do |key|
           td= sort_link(@q, key, resource_class.human_attribute_name(key))
-        td= t('helpers.actions')
+        td.pull-right.actions= t('helpers.actions')
     tbody
       - collection.each do |resource|
         tr
           - index_columns.each do |value|
             td= format_value(resource.public_send(value))
-          td
+          td.pull-right.actions
             = link_to edit_resource_url(resource), class: 'btn btn-warning', title: t('helpers.links.edit') do
               = icon(:pencil)
             |  

@@ -7,7 +7,10 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' 
     = stylesheet_link_tag 'adminlte', media: 'all' 
     = stylesheet_link_tag 'adminlte/skins/skin-blue', media: 'all' 
-    
+  
+    = javascript_include_tag 'jquery3' 
+    = javascript_include_tag 'adminlte_bootstrap', 'data-turbolinks-track': 'reload' 
+
   body.hold-transition.login-page
     #flash_message.hidden data-turbolinks-track = 'reload'
       = flash.to_json
@@ -20,6 +23,4 @@ html
         p.login-box-msg Sign in to start your session
         = yield 
       
-  = javascript_include_tag 'jquery3' 
-  = javascript_include_tag 'adminlte_bootstrap', 'data-turbolinks-track': 'reload' 
-  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
+  

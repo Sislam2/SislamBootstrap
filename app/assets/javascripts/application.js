@@ -12,7 +12,6 @@
 //
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require 'jquery-icheck'
 //= require 'jquery.mask'
 //= require toastr_rails
 //= require nested_form_fields
