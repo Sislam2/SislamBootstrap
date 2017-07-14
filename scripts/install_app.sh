@@ -16,7 +16,7 @@ function share_assets {
   ln -s /srv/shared/assets public/assets
 }
 
-rvm use 2.4.0
+rvm use 2.4.1
 
 cd /srv/sislam_bootstrap
 
