@@ -23,7 +23,7 @@ cd /srv/sislam_bootstrap
 share_assets
 
 bundle install --without development test --quiet --no-deployment
-bundle exec rake db:migrate
-bundle exec rake tmp:clear
+bundle exec rails db:migrate
+bundle exec rails tmp:clear
 
-bundle exec rake assets:precompile
+bundle exec rails assets:precompile
